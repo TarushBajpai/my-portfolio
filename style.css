@@ -1,0 +1,296 @@
+/* ================= GLOBAL / BODY ================= */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000; /* base black background */
+  color: #ffffff;             /* default text color */
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background-color: #111111; /* dark navbar */
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-link {
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #00bfff; /* electric blue for hover/active */
+}
+.logo{
+  border: 2;
+  border-radius: 50%; 
+  margin-right: 10px;
+}
+
+/* ================= HERO SECTION ================= */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000000, #111111);
+}
+
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeUp 1.5s ease-out forwards;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #00bfff;
+  animation: floatText 3s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.hero-buttons .btn-light {
+  background-color: #00bfff;
+  color: #000000;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-buttons .btn-light:hover {
+  background-color: #0099cc;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,191,255,0.3);
+}
+
+.hero-buttons .btn-outline-light {
+  color: #00bfff;
+  border-color: #00bfff;
+}
+
+.hero-buttons .btn-outline-light:hover {
+  background-color: #00bfff;
+  color: #000000;
+}
+
+.scroll-indicator {
+  font-size: 2rem;
+  display: inline-block;
+  animation: bounce 2s infinite;
+  color: #00bfffcc;
+}
+
+/* Hero Animations */
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* ================= ABOUT SECTION ================= */
+#about {
+  background-color: #000000;
+  color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#about h2 {
+  color: #00bfff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeInSection 1s forwards;
+}
+
+#about p.lead {
+  opacity: 0;
+  animation: fadeInSection 1s forwards;
+  animation-delay: 0.3s;
+}
+
+#about .col-md-4 h5 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#about .col-md-4 p {
+  font-size: 1rem;
+}
+
+/* ================= PROJECTS SECTION ================= */
+#projects {
+  background-color: #000000; /* section black */
+  color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.project-card {
+  background-color: #1f1f1f; /* slightly lighter than black for visibility */
+  color: #ffffff;             /* text white for contrast */
+  border: 1px solid #00bfff;  /* subtle blue border */
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
+  opacity: 1; /* set to 1 so it’s visible immediately */
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,191,255,0.4);
+}
+
+
+#projects h2 {
+  color: #00bfff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInSection 1s forwards;
+}
+
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+  background-color: #00bfff;
+  border-color: #00bfff;
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background-color: #0099cc;
+  border-color: #0099cc;
+  color: #000000;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeInSection {
+  to { opacity: 1; }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+/* ================= SKILLS SECTION ================= */
+#skills {
+  background-color: #111111;
+  color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#skills h2 {
+  color: #00bfff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.skill-card {
+  background-color: #1f1f1f;
+  border: 1px solid #00bfff;
+  color: #ffffff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,191,255,0.4);
+}
+
+/* ================= CONTACT SECTION ================= */
+#contact {
+  background-color: #000000;
+  color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#contact h2 {
+  color: #00bfff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#contact-form .form-control {
+  background-color: #1f1f1f;
+  border: 1px solid #00bfff;
+  color: #ffffff;
+  padding: 10px 15px;
+}
+
+#contact-form .form-control:focus {
+  background-color: #1f1f1f;
+  border-color: #00bfff;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+#contact-form button {
+  margin-top: 10px;
+}
+
+/* Social Links */
+.social-links a {
+  color: #00bfff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #0099cc;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background-color: #111111;
+  color: #00bfff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 0.9rem;
+}
+#contact-form .form-control::placeholder {
+  color: #bbbbbb; /* light gray for visibility */
+  opacity: 1;     /* ensures full visibility */
+}
+
